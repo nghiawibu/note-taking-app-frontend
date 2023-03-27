@@ -1,0 +1,66 @@
+<!-- <mat-toolbar>
+  <button mat-mini-fab color="" (click)="sidenav.toggle()">
+    <mat-icon>list</mat-icon>
+  </button>
+  <span> Airline reservation management app</span>
+
+</mat-toolbar> -->
+
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav #sidenav mode="side" opened="true" class="example-sidenav">
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-icon-button (click)="isExpanded = !isExpanded">
+          <mat-icon *ngIf="!isExpanded">chevron_right</mat-icon>
+          <mat-icon *ngIf="isExpanded">chevron_left</mat-icon>
+        </button>
+      </mat-list-item>
+      <mat-list-item [routerLink]="['notes']">
+        <mat-icon mat-list-icon>note</mat-icon>
+         <p matLine *ngIf="isExpanded">Notes</p>
+       </mat-list-item>
+    </mat-nav-list>
+    <!-- <a mat-button class="menu-button" [routerLink]="['admin']">
+      <mat-icon>account_box</mat-icon>
+      <span>Admin</span>
+    </a>
+    <a mat-button class="menu-button" [routerLink]="['customer']">
+      <mat-icon>person</mat-icon>
+      <span>Customer</span>
+    </a>
+    <button mat-button class="menu-button" [routerLink]="['schedule']">
+      <mat-icon>schedule</mat-icon>
+      <span>Schedule</span>
+    </button>
+    <button mat-button class="menu-button" [routerLink]="['reservation']">
+      <mat-icon>book</mat-icon>
+      <span>Reservation</span>
+    </button>
+    <button mat-button class="menu-button" [routerLink]="['transaction']">
+      <mat-icon>currency_bitcoin</mat-icon>
+      <span>Transaction</span>
+    </button>
+    <button mat-button class="menu-button" [routerLink]="['ticket']">
+      <mat-icon>airplane_ticket</mat-icon>
+      <span>Ticket</span>
+    </button>
+    <button mat-button class="menu-button" [routerLink]="['report']">
+      <mat-icon>assignment</mat-icon>
+      <span>Report</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button">
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button> -->
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="example-sidenav-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
